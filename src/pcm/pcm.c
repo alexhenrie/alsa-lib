@@ -680,6 +680,8 @@ static int pcm_state_to_error(snd_pcm_state_t state)
 		return -ESTRPIPE;
 	case SND_PCM_STATE_DISCONNECTED:
 		return -ENODEV;
+	case SND_PCM_STATE_UNKNOWN:
+		return -ENOSYS;
 	default:
 		return 0;
 	}
