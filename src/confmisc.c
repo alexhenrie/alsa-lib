@@ -440,8 +440,8 @@ int snd_func_concat(snd_config_t **dst, snd_config_t *root, snd_config_t *src,
 	err = snd_config_get_id(src, &id);
 	if (err >= 0)
 		err = snd_config_imake_string(dst, id, res);
-	free(res);
       __error:
+	free(res);
 	return err;
 }
 #ifndef DOC_HIDDEN
