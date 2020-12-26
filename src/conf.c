@@ -877,16 +877,9 @@ static int get_nonwhite(input_t *input)
 
 static inline int get_hexachar(input_t *input)
 {
-	int c, num = 0;
-
+	int c;
 	c = get_char(input);
-	if (c >= '0' && c <= '9') num |= (c - '0') << 4;
-	else if (c >= 'a' && c <= 'f') num |= (c - 'a') << 4;
-	else if (c >= 'A' && c <= 'F') num |= (c - 'A') << 4;
 	c = get_char(input);
-	if (c >= '0' && c <= '9') num |= (c - '0') << 0;
-	else if (c >= 'a' && c <= 'f') num |= (c - 'a') << 0;
-	else if (c >= 'A' && c <= 'F') num |= (c - 'A') << 0;
 	return c;
 }
 
